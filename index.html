@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sportsapp</title>
+    <title>GAFE</title>
     <link rel="stylesheet" href="./public/css/styles.css"> 
 </head>
 <body>
@@ -15,7 +15,7 @@
             <nav class="menu menu--open">
                 <ul class="menu-list">
                     <li class="menu-item"><a href="">Teams</a></li>
-                    <li class="menu-item"><a href="">Draw</a></li>
+                    <li class="menu-item"><a href="">Groups</a></li>
                     <li class="menu-item"><a href="">Play Offs</a></li>
                     <li class="menu-item"><a href="">Winner</a></li>
                 </ul>
@@ -23,26 +23,50 @@
             <button class="burger">SVG</button>
             <button class="signin">Sign In</button>
         </div>
+        <div class="modal">
+            <div class="modal-container">
+                <button id="close-modal">SVG</button>
+                <h2>Sign In</h2>
+                <form>
+                    <label for="username">Username
+                        <input type="text" name="username" id="username" placeholder="Please enter your username"></input>
+                    </label>
+                    <label for="password">Password
+                        <input type="text" name="password" id="password" placeholder="Please enter your password"></input>
+                    </label>
+                    <input type="submit" value="Sign In"></input>
+                </form>
+            </div>
+        </div>
     </header>
     <main>
-        <section id="top-section">
-            <p>2277</p>
-            <h1>Galactic Football Cup!</h1>
-            <p>texto largo</p>
+        <section>
+            <div class="container">
+                <div class="hero-content">
+                    <div>
+                        <p class="">Coming To Your Nearest System - Fall 2277</p>
+                        <h1>Galactic Football Cup!</h1>
+                        <p>All planets from our Solar System are invited to participate in this once-in-a-lifetime event!</p>
+                        <p>All sentient species with at least four limbs are allowed to take part!</p>
+                    </div>
+                    <div>
+                        <h2>Tickets Coming Soon!</h2>
+                        <p>Astro-Suits and Oxygen Supplies Not Included</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="bottom-section">
-            <h3>Tickets</h3>
-            <p>astro-suits</p>
-        </section>
-        <section id="footer">
     </main>
-        <footer>
-            <p>copyright</p>
-            <img xfacebookx>social1
-            <img xinstagramx>social2
-            <img xtwitterx>social3
-        </footer>
-    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2277 <span>Galactic Association Football Evolved</span> All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"></a>
+                <a href="https://www.instagram.com"/></a>
+                <a href="https://x.com/?lang=es"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script src="app.js"></script>
