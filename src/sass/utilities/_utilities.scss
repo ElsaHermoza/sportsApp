@@ -1,3 +1,17 @@
 /* 
 Utility classes are small, reusable CSS classes that perform a single specific function or style. They focus on one property, such as margin, padding, text alignment, or display properties, making them highly modular and easy to apply across various elements. 
 */
+
+.container {
+    max-width: $page-width;
+    margin-inline: auto;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-5 {
+    gap: 5px;
+}

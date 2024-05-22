@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+// Reset
+@import 'global/reset';
+
+// Utilities & Variables
+@import 'utilities/variables';
+@import 'utilities/utilities';
+
+// Globals
+@import 'global/global';
+@import 'global/header';
+@import 'global/footer';
+
+// Pages
+@import 'pages/index';
+@import 'pages/teams';
+
+// Components
+@import 'components/signin-modal';
+@import 'components/signin-form';
