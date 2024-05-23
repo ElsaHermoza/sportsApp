@@ -1,6 +1,10 @@
 # VSCode
 .vscode
 
+# CSS and CSS Map
+public/css/*.css
+public/css/*.css.map
+
 # Logs
 logs
 *.log
