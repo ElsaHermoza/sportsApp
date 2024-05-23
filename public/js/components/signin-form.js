@@ -1,4 +1,4 @@
-const admin=[
+const usersList=[
     {
         "username": "Elena",
         "password": "12345" 
@@ -10,43 +10,45 @@ const admin=[
 ];
 
 export function modalClearLoginForm() {
-    const usernameImput = document.getElementById('username');
-    const passwordImput= document.getElementById('password');
-    const loginErrorSpan= document.getElementById('form-error');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginErrorSpan = document.getElementById('form-error');
 
-    usernameImput.value= '';
-    passwordImput.value='';
-    loginErrorSpan.textContent='';
+    usernameInput.value = '';
+    passwordInput.value ='';
+    loginErrorSpan.textContent ='';
 };
+
+
  export function runLoginForm() {
-    const loginFormElement= document.getElementById('login-form');
+    const loginFormElement = document.getElementById('login-form');
 
     loginFormElement.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const usernameImput= document.getElementById('username');
-        const passwordImput= document.getElementById('password');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
         
 
-        const usernameImputValue= usernameImput.value;
-        const passwordImputValue= passwordImput.value;
+        const usernameInputValue = usernameInput.value;
+        const passwordInputValue = passwordInput.value;
 
-        if(!userValidation(usernameImputValue, passwordImputValue)){
-            usernameImputValue='';
-            passwordImputValue='';
+        if(!userValidation(usernameInputValue, passwordInputValue)){
+            usernameInputValue = '';
+            passwordInputValue = '';
             return;
         }
 
-        clearLoginForm(usernameImput, passwordImput);
+        clearLoginForm(usernameInput, passwordInput);
         redirectUser();
 
 
      });  
  }
- function userValidation(usernameImputValue, passwordImputValue){
-    const loginErrorSpan= document.getElementById('form-error');
+ function userValidation(usernameInputValue, passwordInputValue){
+    const loginErrorSpan = document.getElementById('form-error');
 
-    const validUser = falseUsers.some(user=> user.username === usernameImputValue && user.password === passwordImputValue);
+    const validUser = usersList.some(user=> user.username === usernameInputValue && user.password === passwordInputValue);
 
     if(!validUser){
         loginErrorSpan.textContent = 'invalid username or password.';
@@ -56,13 +58,13 @@ export function modalClearLoginForm() {
  }
 
  function redirectUser() {
-    window.location.href =""/*here is the link on page3*/
+    window.location.href = "/pages/teams.html"/*here is the link on page3*/
     
  }
- function clearLoginForm(usernameImput, passwordImput){
+ function clearLoginForm(usernameInput, passwordInput){
 
-    usernameImput.value='';
-    passwordImput.Value='';
+    usernameInput.value = '';
+    passwordInput.Value = '';
  }
 
 
