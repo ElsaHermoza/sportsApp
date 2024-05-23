@@ -1,0 +1,52 @@
+/*
+This Mobile First applies to ( ALL AND EVERY SCREENSIZE )
+and in mobile first normally is used min-width as the example bellow
+*/
+
+
+// Mobile First
+header {
+    background-color: $dark-main;
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        .logo {
+            margin-right: auto;
+        }
+
+        .burger {
+            display: flex;
+            background-color: rgba(240, 248, 255, 0);
+            border: 0;
+            order: 3;
+        }        
+
+    }
+
+}
+
+
+// from 870px to Bigger
+@media (min-width: 870px) {
+
+    header {
+        
+        .container {
+            justify-content: space-between; // horizontal
+            align-items: center; // vertical
+
+            .logo {
+                margin-right: 0;
+            }
+
+            .burger {
+                display: none;
+            }
+        }
+    }
+}

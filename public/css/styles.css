@@ -123,5 +123,41 @@ p {
     font-size: 18px;
   }
 }
+/*
+This Mobile First applies to ( ALL AND EVERY SCREENSIZE )
+and in mobile first normally is used min-width as the example bellow
+*/
+header {
+  background-color: hsl(216, 75%, 12%);
+}
+header .container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .container .logo {
+  margin-right: auto;
+}
+header .container .burger {
+  display: flex;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0;
+  order: 3;
+}
+
+@media (min-width: 870px) {
+  header .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .container .logo {
+    margin-right: 0;
+  }
+  header .container .burger {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
