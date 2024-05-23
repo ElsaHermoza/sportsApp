@@ -123,5 +123,16 @@ p {
     font-size: 18px;
   }
 }
+footer {
+  background-color: hsl(216, 75%, 12%);
+  padding-inline: 20px;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer span {
+  display: none;
+}
 
 /*# sourceMappingURL=styles.css.map */
