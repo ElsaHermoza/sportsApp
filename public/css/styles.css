@@ -123,20 +123,41 @@ p {
     font-size: 18px;
   }
 }
-.container {
-  justify-content: center;
+section {
+  background-image: url(/public/assets/images/hero-mobile-min.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 680px;
+}
+
+.hero-content {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding-block: 40px;
 }
-.container h1 {
+.hero-content h1 {
   font-size: 36px;
-  color: #ECFAFF;
+  margin-bottom: 5px;
 }
-.container h2 {
+.hero-content h2 {
   font-size: 24px;
-  color: #ECFAFF;
 }
-.container p {
+.hero-content p {
   font-size: 15px;
+}
+
+.hero-content--description {
+  font-size: 13px;
+}
+
+@media (min-width: 870px) {
+  section {
+    background-image: url(/public/assets/images/hero-desktop-min.jpg);
+    height: 860px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

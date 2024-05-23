@@ -1,23 +1,43 @@
 //mobile
 
-.hero-content{
+section {
+    background-image: url(/public/assets/images/hero-mobile-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 680px;
+}
+
+.hero-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 40px;
+    padding-block: 40px;
 
-    h1{
-    font-size: 36px;
+    h1 {
+        font-size: 36px;
+        margin-bottom: 5px;
     }
-    h2{
-        font-size: 240px;
+
+    h2 {
+        font-size: 24px;
     }   
     
-    p{
+    p {
         font-size: 15px;
     }
 }
 
+.hero-content--description {
+    font-size: 13px;
+}
 
 //desktop
-
+@media (min-width: 870px) {
+    // Elsa, here you gonna change everything that need to be changed on desktop version
+    section {
+        background-image: url(/public/assets/images/hero-desktop-min.jpg);
+        height: 860px;
+    }
+}
