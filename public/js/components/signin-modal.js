@@ -1,5 +1,5 @@
 export function showLoginModal() {
-    const OpenModalButton = document.getElementById('sig-in-button');
+    const OpenModalButton = document.getElementById('sign-in-button');
     const loginModal = document.getElementById('login-modal');
 
     OpenModalButton.addEventListener('click',function() {
