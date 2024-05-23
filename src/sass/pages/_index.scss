@@ -1,0 +1,23 @@
+//mobile
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+
+    h1{
+    font-size: 36px;
+    }
+    h2{
+        font-size: 240px;
+    }   
+    
+    p{
+        font-size: 15px;
+    }
+}
+
+
+//desktop
+

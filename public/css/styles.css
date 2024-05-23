@@ -123,5 +123,20 @@ p {
     font-size: 18px;
   }
 }
+.container {
+  justify-content: center;
+  display: flex;
+}
+.container h1 {
+  font-size: 36px;
+  color: #ECFAFF;
+}
+.container h2 {
+  font-size: 24px;
+  color: #ECFAFF;
+}
+.container p {
+  font-size: 15px;
+}
 
 /*# sourceMappingURL=styles.css.map */
