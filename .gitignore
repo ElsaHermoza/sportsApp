@@ -2,8 +2,8 @@
 .vscode
 
 # CSS and CSS Map
-public/*.css
-public/*.map.css
+public/css/*.css
+public/css/*.css.map
 
 # Logs
 logs
