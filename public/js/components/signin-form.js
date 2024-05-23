@@ -15,8 +15,8 @@ export function modalClearLoginForm() {
     const loginErrorSpan = document.getElementById('form-error');
 
     usernameInput.value = '';
-    passwordInput.value ='';
-    loginErrorSpan.textContent ='';
+    passwordInput.value = '';
+    loginErrorSpan.textContent = '';
 };
 
 
@@ -34,8 +34,8 @@ export function modalClearLoginForm() {
         const passwordInputValue = passwordInput.value;
 
         if(!userValidation(usernameInputValue, passwordInputValue)){
-            usernameInputValue = '';
-            passwordInputValue = '';
+            usernameInput.value = '';
+            passwordInput.value = '';
             return;
         }
 
@@ -48,7 +48,7 @@ export function modalClearLoginForm() {
  function userValidation(usernameInputValue, passwordInputValue){
     const loginErrorSpan = document.getElementById('form-error');
 
-    const validUser = usersList.some(user=> user.username === usernameInputValue && user.password === passwordInputValue);
+    const validUser = usersList.some(user => user.username === usernameInputValue && user.password === passwordInputValue);
 
     if(!validUser){
         loginErrorSpan.textContent = 'invalid username or password.';

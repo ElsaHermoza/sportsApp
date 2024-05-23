@@ -2,7 +2,7 @@ import { modalClearLoginForm } from "./signin-form.js";
 
 export function showLoginModal() {
 
-    const openModalButton = document.getElementById('sig-in-button');
+    const openModalButton = document.getElementById('sign-in-button');
     const loginModal = document.getElementById('login-modal');
 
     modalClearLoginForm();
