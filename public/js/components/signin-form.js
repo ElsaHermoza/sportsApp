@@ -37,12 +37,32 @@ export function modalClearLoginForm() {
             return;
         }
 
-        clearLoginForm
+        clearLoginForm(usernameImput, passwordImput);
+        redirectUser();
 
 
-        
-    })
+     });  
+ }
+ function userValidation(usernameImputValue, passwordImputValue){
+    const loginErrorSpan= document.getElementById('form-error');
+
+    const validUser = falseUsers.some(user=> user.username === usernameImputValue && user.password === passwordImputValue);
+
+    if(!validUser){
+        loginErrorSpan.textContent = 'invalid username or password.';
+        return false;
+    }
+    return true;
+ }
+
+ function redirectUser() {
+    window.location.href =""/*here is the link on page3*/
     
+ }
+ function clearLoginForm(usernameImput, passwordImput){
+
+    usernameImput.value='';
+    passwordImput.Value='';
  }
 
 
