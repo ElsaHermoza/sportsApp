@@ -34,23 +34,14 @@
     
     .hero-section {
         background-image: url(../assets/images/hero-desktop-min.jpg);
-        // background-repeat: no-repeat;
-        // background-position: center;
-        // background-size: cover;
-        // flex: 1;
-    
-
+        
     .hero-content {
         display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // gap: 10px;
-        padding-block: 40px; // ! change 40px to 100px ! 
-        // margin-bottom: 50px;
+        padding-block: 100px; 
+        
     
         h1 {
             font-size: 48px;
-            // margin-bottom: 5px;
         }
     
         h2 {

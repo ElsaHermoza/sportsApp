@@ -182,7 +182,7 @@ p {
   }
   .hero-section .hero-content {
     display: flex;
-    padding-block: 40px;
+    padding-block: 100px;
   }
   .hero-section .hero-content h1 {
     font-size: 48px;
