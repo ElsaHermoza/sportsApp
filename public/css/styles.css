@@ -154,7 +154,6 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 680px;
   flex: 1;
 }
 
@@ -172,9 +171,6 @@ p {
 .hero-content h2 {
   font-size: 24px;
 }
-.hero-content p {
-  font-size: 15px;
-}
 
 .hero-content--description {
   font-size: 13px;
@@ -183,23 +179,13 @@ p {
 @media (min-width: 870px) {
   .hero-section {
     background-image: url(../assets/images/hero-desktop-min.jpg);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    flex: 1;
   }
   .hero-section .hero-content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
     padding-block: 40px;
-    margin-bottom: 50px;
   }
   .hero-section .hero-content h1 {
     font-size: 48px;
-    margin-bottom: 5px;
   }
   .hero-section .hero-content h2 {
     font-size: 32px;
