@@ -1,11 +1,12 @@
 //mobile
 
-section {
-    background-image: url(/public/assets/images/hero-mobile-min.jpg);
+.hero-section {
+    background-image: url(../assets/images/hero-mobile-min.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 680px;
+    flex: 1;
 }
 
 .hero-content {
@@ -36,8 +37,8 @@ section {
 //desktop
 @media (min-width: 870px) {
     // Elsa, here you gonna change everything that need to be changed on desktop version
-    section {
-        background-image: url(/public/assets/images/hero-desktop-min.jpg);
-        height: 860px;
+    .hero-section {
+        background-image: url(../assets/images/hero-desktop-min.jpg);
+        height: 100%;
     }
 }

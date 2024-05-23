@@ -70,6 +70,10 @@ Utility classes are small, reusable CSS classes that perform a single specific f
   gap: 5px;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: hsl(215, 76%, 10%);
 }
@@ -84,6 +88,28 @@ header, footer {
   padding-inline: 20px;
 }
 
+header {
+  min-height: 70px;
+}
+
+main {
+  min-height: calc(100% - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  min-height: 50px;
+}
+
+@media (min-width: 870px) {
+  header {
+    min-height: 90px;
+  }
+  main {
+    min-height: calc(100% - 140px);
+  }
+}
 section {
   padding-inline: 20px;
 }
@@ -123,12 +149,13 @@ p {
     font-size: 18px;
   }
 }
-section {
-  background-image: url(/public/assets/images/hero-mobile-min.jpg);
+.hero-section {
+  background-image: url(../assets/images/hero-mobile-min.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 680px;
+  flex: 1;
 }
 
 .hero-content {
@@ -154,9 +181,9 @@ section {
 }
 
 @media (min-width: 870px) {
-  section {
-    background-image: url(/public/assets/images/hero-desktop-min.jpg);
-    height: 860px;
+  .hero-section {
+    background-image: url(../assets/images/hero-desktop-min.jpg);
+    height: 100%;
   }
 }
 
