@@ -120,18 +120,19 @@ p {
     font-size: 48px;
   }
   p {
-    font-size: 18px;
+    font-size: 28px;
   }
 }
 footer {
   background-color: hsl(216, 75%, 12%);
   padding-inline: 20px;
+  margin-top: 30px;
 }
 footer .container {
   display: flex;
   justify-content: space-between;
 }
-footer span {
+span {
   display: none;
 }
 
