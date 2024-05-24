@@ -35,3 +35,18 @@
 .hb {
     width: 32px;
 }
+
+
+// Desktop
+
+@media (min-width: 870px) {
+    
+    .menu {
+        position: relative;
+        visibility: visible;
+
+        .menu-list {
+            display: flex;
+        }
+    }
+}
