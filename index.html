@@ -44,12 +44,12 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5147 24.4853C6.92891 23.8995 6.92891 22.9497 7.5147 22.364L22.3639 7.51472C22.9497 6.92893 23.8995 6.92893 24.4853 7.51472C25.071 8.1005 25.071 9.05025 24.4853 9.63604L9.63602 24.4853C9.05023 25.0711 8.10049 25.0711 7.5147 24.4853Z" fill="#D6F4FF"/>
                     </svg></button>
                 <h2>Sign In</h2>
-                <form id="login-form">
-                    <label for="username">Username
-                        <input type="text" name="username" id="username" placeholder="Please enter your username"></input>
+                <form id="login-form" class="login-form flex-column">
+                    <label for="username" class="flex-column">Username
+                        <input type="text" name="username" id="username" placeholder="Please enter your username" required></input>
                     </label>
-                    <label for="password">Password
-                        <input type="password" name="password" id="password" placeholder="Please enter your password"></input>
+                    <label for="password" class="flex-column">Password
+                        <input type="password" name="password" id="password" placeholder="Please enter your password" required></input>
                     </label>
                     <input type="submit" value="Sign In"></input>
                     <span id="form-error"></span>

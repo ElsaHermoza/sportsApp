@@ -18,12 +18,14 @@
     }
 
     .modal-container {
+        width: 100%;
+        max-width: 320px;
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 30px;
         background-color: $dark-main;
-        padding: 20px 20px 40px 20px;
+        padding: 30px 25px 25px 25px;
         margin-inline: 20px;
         border-radius: 10px;
 
