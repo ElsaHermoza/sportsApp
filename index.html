@@ -9,54 +9,75 @@
 <body>
     <header>
         <div class="container">
-            <figure class="logo">
+            <div class="logo">
+                <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_175_67)">
+                    <path d="M7.51502 2.7105L7.51501 2.71031C7.4969 2.24926 7.90764 1.75 8.55556 1.75H19.4444C20.0924 1.75 20.5031 2.24926 20.485 2.71031L20.4849 2.7114C20.4752 2.96508 20.4659 3.19655 20.4522 3.42535L20.3731 4.74828L20.2818 5.61979C19.8528 9.71567 18.9148 12.3555 17.9227 14.0539L16.4042 16.6535C15.2041 17.2329 14.3056 18.3755 14.3056 19.7234C14.3056 21.4359 15.7348 22.75 17.3979 22.75H18.6667C18.88 22.75 18.9722 22.9031 18.9722 23C18.9722 23.0969 18.88 23.25 18.6667 23.25H9.33333C9.12004 23.25 9.02778 23.0969 9.02778 23C9.02778 22.9031 9.12004 22.75 9.33333 22.75H10.6021C12.2652 22.75 13.6944 21.4359 13.6944 19.7234C13.6944 18.3745 12.7932 17.2408 11.6046 16.6603L10.0821 14.0539C9.09004 12.3555 8.15206 9.71567 7.72306 5.61979L7.62044 4.64003L7.54777 3.42535C7.53409 3.19668 7.52483 2.96125 7.51502 2.7105ZM1.25049 4.75H2.37708V5.75V5.75038L1.29746 5.83482C1.26934 5.48444 1.2534 5.12295 1.25049 4.75Z" stroke="#ECFAFF" stroke-width="2.5"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_175_67">
+                    <rect width="28" height="24" fill="white" transform="translate(0 0.5)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
                 <p>GAFE</p>
-            </figure>
-            <nav class="menu menu--open">
+            </div>
+            <nav id="nav" class="menu">
                 <ul class="menu-list">
-                    <li class="menu-item"><a href="">Teams</a></li>
+                    <li class="menu-item"><a href="/pages/teams.html">Teams</a></li>
                     <li class="menu-item"><a href="">Groups</a></li>
                     <li class="menu-item"><a href="">Play Offs</a></li>
                     <li class="menu-item"><a href="">Winner</a></li>
                 </ul>
             </nav>
-            <button class="burger"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 22.5C4 21.6716 4.67157 21 5.5 21H26.5C27.3284 21 28 21.6716 28 22.5C28 23.3284 27.3284 24 26.5 24H5.5C4.67157 24 4 23.3284 4 22.5Z" fill="#D6F4FF"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 16C4 15.1716 4.67157 14.5 5.5 14.5H26.5C27.3284 14.5 28 15.1716 28 16C28 16.8284 27.3284 17.5 26.5 17.5H5.5C4.67157 17.5 4 16.8284 4 16Z" fill="#D6F4FF"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 9.5C4 8.67157 4.67157 8 5.5 8H26.5C27.3284 8 28 8.67157 28 9.5C28 10.3284 27.3284 11 26.5 11H5.5C4.67157 11 4 10.3284 4 9.5Z" fill="#D6F4FF"/>
-                </svg></button>
-            <button id="sig-in-button" class="signin">Sign In</button>
+            <button id="toggle-menu-button" class="burger">
+                <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
+                    <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+                        <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+                        <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+                    </path>
+                    <rect width="10" height="10" stroke="none">
+                        <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+                    </rect>
+                    <rect width="10" height="10" stroke="none">
+                        <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+                        <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+                    </rect>
+                </svg>
+            </button>
+            <button id="sign-in-button" class="signin">Sign In</button>
         </div>
-        <div id="login-modal" class="modal">
+        <div id="login-modal" class="modal green">
             <div class="modal-container">
-                <button id="close-modal"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button id="close-modal" class="close-modal"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.51472 7.51473C8.1005 6.92894 9.05025 6.92894 9.63604 7.51473L24.4853 22.364C25.0711 22.9498 25.0711 23.8995 24.4853 24.4853C23.8995 25.0711 22.9497 25.0711 22.364 24.4853L7.51472 9.63605C6.92893 9.05027 6.92893 8.10052 7.51472 7.51473Z" fill="#D6F4FF"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5147 24.4853C6.92891 23.8995 6.92891 22.9497 7.5147 22.364L22.3639 7.51472C22.9497 6.92893 23.8995 6.92893 24.4853 7.51472C25.071 8.1005 25.071 9.05025 24.4853 9.63604L9.63602 24.4853C9.05023 25.0711 8.10049 25.0711 7.5147 24.4853Z" fill="#D6F4FF"/>
                     </svg></button>
                 <h2>Sign In</h2>
-                <form>
-                    <label for="username">Username
-                        <input type="text" name="username" id="username" placeholder="Please enter your username"></input>
+                <form id="login-form" class="login-form flex-column">
+                    <label for="username" class="flex-column">Username
+                        <input type="text" name="username" id="username" placeholder="Please enter your username" required></input>
                     </label>
-                    <label for="password">Password
-                        <input type="text" name="password" id="password" placeholder="Please enter your password"></input>
+                    <label for="password" class="flex-column">Password
+                        <input type="password" name="password" id="password" placeholder="Please enter your password" required></input>
                     </label>
                     <input type="submit" value="Sign In"></input>
+                    <span id="form-error"></span>
                 </form>
             </div>
         </div>
     </header>
     <main>
-        <section>
+        <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <div>
-                        <p class="">Coming To Your Nearest System - Fall 2277</p>
+                    <div class="flex-column gap-5">
+                        <p class="hero-content--description">Coming To Your Nearest System - Fall 2277</p>
                         <h1>Galactic Football Cup!</h1>
                         <p>All planets from our Solar System are invited to participate in this once-in-a-lifetime event!</p>
                         <p>All sentient species with at least four limbs are allowed to take part!</p>
                     </div>
-                    <div>
+                    <div class="flex-column gap-5">
                         <h2>Tickets Coming Soon!</h2>
                         <p>Astro-Suits and Oxygen Supplies Not Included</p>
                     </div>
@@ -82,5 +103,5 @@
     </footer>
 </body>
 
-<script src="/public/js/app.js"></script>
+<script type="module" src="/public/js/app.js"></script>
 </html>

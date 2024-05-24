@@ -1,6 +1,10 @@
 
 // Global
 // html elements
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: $dark-secondary;
 }
@@ -13,6 +17,31 @@ body, button, input {
 
 header, footer {
     padding-inline: 20px;
+}
+
+header {
+    box-sizing: border-box;
+    min-height: 70px;
+}
+
+main {
+    // height: 100%;
+    min-height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    min-height: 50px;
+}
+
+@media (min-width: 870px) {
+    header {
+        min-height: 90px;
+    }
+    main {
+        min-height: calc(100% - 140px);
+    }
 }
 
 section {
@@ -42,7 +71,7 @@ h1 {
 }
 
 p {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 130%; /* 46.8px */
     color: $light-blue;

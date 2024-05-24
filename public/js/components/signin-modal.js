@@ -1,26 +1,33 @@
+import { modalClearLoginForm } from "./signin-form.js";
+
 export function showLoginModal() {
-    const OpenModalButton = document.getElementById('sig-in-button');
+
+    const openModalButton = document.getElementById('sign-in-button');
     const loginModal = document.getElementById('login-modal');
 
-    OpenModalButton.addEventListener('click',function() {
-        if (!loginModal.classList.contains('modal--open')) {
-            loginModal.classList.add('modal--open')
-            
-        }
-        
-    })
-    
-}
+    modalClearLoginForm();
 
-export function closeLoginModal(){
+    openModalButton.addEventListener('click', function() {
+        if (!loginModal.classList.contains('modal--open')) {
+            loginModal.classList.add('modal--open');
+            
+        };
+        
+    });
+    
+};
+
+export function closeLoginModal() {
     const closeModalButton = document.getElementById('close-modal');
     const loginModal = document.getElementById('login-modal');
 
-    closeLoginModal.addEventListener('click',() => {
+    modalClearLoginForm();
+
+    closeModalButton.addEventListener('click', function() {
         if (loginModal.classList.contains('modal--open')) {
-            loginModal.classList.remove('modal--open')
+            loginModal.classList.remove('modal--open');
             
-        }
+        };
         
-    })
-}
+    });
+};

@@ -1,0 +1,49 @@
+.modal {
+    background-color: rgba(59, 59, 59, 0.705);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+    &.modal--open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .modal-container {
+        width: 100%;
+        max-width: 320px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: $dark-main;
+        padding: 30px 25px 25px 25px;
+        margin-inline: 20px;
+        border-radius: 10px;
+
+        h2 {
+            font-size: 24px;
+            color: $white-blue;
+        }
+
+        .close-modal {
+            background-color: transparent;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            // width: 100%;
+        }
+
+        .close-modal:hover {
+            cursor: pointer;
+        }
+    }
+}
