@@ -6,12 +6,12 @@ and in mobile first normally is used min-width as the example bellow
 
 // Mobile First
 header {
+    position: relative;
     background-color: $dark-main;
     padding-inline: 20px;
     padding-block: 15px;
 
     .container {
-        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -41,9 +41,6 @@ header {
         }        
     }
 
-    .menu {
-        display: none;
-    }
 }
 
 

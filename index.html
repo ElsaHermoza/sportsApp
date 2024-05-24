@@ -22,7 +22,7 @@
                     </svg>
                 <p>GAFE</p>
             </div>
-            <nav class="menu menu--open">
+            <nav id="nav" class="menu">
                 <ul class="menu-list">
                     <li class="menu-item"><a href="">Teams</a></li>
                     <li class="menu-item"><a href="">Groups</a></li>
@@ -30,11 +30,21 @@
                     <li class="menu-item"><a href="">Winner</a></li>
                 </ul>
             </nav>
-            <button class="burger"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 22.5C4 21.6716 4.67157 21 5.5 21H26.5C27.3284 21 28 21.6716 28 22.5C28 23.3284 27.3284 24 26.5 24H5.5C4.67157 24 4 23.3284 4 22.5Z" fill="#D6F4FF"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 16C4 15.1716 4.67157 14.5 5.5 14.5H26.5C27.3284 14.5 28 15.1716 28 16C28 16.8284 27.3284 17.5 26.5 17.5H5.5C4.67157 17.5 4 16.8284 4 16Z" fill="#D6F4FF"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 9.5C4 8.67157 4.67157 8 5.5 8H26.5C27.3284 8 28 8.67157 28 9.5C28 10.3284 27.3284 11 26.5 11H5.5C4.67157 11 4 10.3284 4 9.5Z" fill="#D6F4FF"/>
-                </svg></button>
+            <button id="toggle-menu-button" class="burger">
+                <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
+                    <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+                        <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+                        <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+                    </path>
+                    <rect width="10" height="10" stroke="none">
+                        <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+                    </rect>
+                    <rect width="10" height="10" stroke="none">
+                        <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+                        <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+                    </rect>
+                </svg>
+            </button>
             <button id="sign-in-button" class="signin">Sign In</button>
         </div>
         <div id="login-modal" class="modal green">
