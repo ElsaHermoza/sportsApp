@@ -7,51 +7,62 @@ export function teamListManager() {
 
     const teamAddForm = document.getElementById('team-add-form')
 
+
+    /**
+     * When submit the form we need to
+     * See if the information is on localStorage
+     * Save the information to localStorage
+     * Add the information to HTML 
+     */
+    const teamListKey = 'teams'
+
+
+    // Check if data exists on localStorage or Set it
+    function getTeams() {
+        
+        let savedTeams = localStorage.getItem(teamListKey)
+        return savedTeams ? JSON.parse(savedTeams) : []
+    }
+
+    // teams variable receives the information from the getTeams Return
+    let teams = getTeams()
+
+    function addTeam(teamId, teamNameValue) {
+        // Create the team Object
+        // Save the team object to localStorage
+        // maybe put the team on html
+
+        const newTeam = {
+            id: teamId,
+            name: teamNameValue,
+            flag: '/public/assets/flags/flag-placeholder.jpg'
+        }
+
+        // saving the newTeam object to the Array
+        teams.push(newTeam)
+        localStorage.setItem(teamListKey, JSON.stringify(teams))
+
+    }
+
     // Get the form and input value
     teamAddForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log('clicked submit');
+        //console.log('clicked submit');
         
-        const teamName = document.getElementById('team-name').value
-        console.log(teamName);
+        const teamNameInput = document.getElementById('team-name')
+        const teamNameValue = teamNameInput.value
+        //console.log(teamName);
 
-        return teamName
+        const teamId = Date.now()
+
+        addTeam(teamId, teamNameValue)
+        teamNameInput.value = ''
     })
-
-
-    const teamListKey = 'teams'
-    let teamArray = [
-        {
-        'id': 'id',
-        'name': 'team name',
-        'flag': '/public/assets/flags/flag-placeholder.jpg'
-        }
-    ]
-
-    // Check if data exists on localStorage or Set it
-    function checkLocalStorage() {
-        
-        let teamData = localStorage.getItem(teamListKey)
-
-        // if doesnt exist, we stringify array, and assign array to teamData
-        if(!teamData) {
-            localStorage.setItem(teamListKey, JSON.stringify(teamArray))
-            teamData = teamArray;
-        } else {
-            // if exist we parse the Original teamData and assign to team data
-            teamData = JSON.parse(teamData) 
-        }
-        
-        // return the teamData from 1 of the conditions
-        console.log(teamData)
-        return teamData
-    }
 
 
 
 
     // Function calls
-    checkLocalStorage()
 }
 
 
