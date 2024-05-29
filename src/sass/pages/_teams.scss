@@ -4,13 +4,11 @@ button {
 
 .team-item {
     border: 1px blue solid;
-    padding: 5px;
 }
 
 .team-card {
     border: 1px green solid;
-    margin: 10px;
-    padding: 5px;
+   
 }
 
 .flags-modal {
@@ -21,6 +19,45 @@ button {
 
 .edit-team-name-container {
     border: 1px yellow dashed;
-    margin: 10px;
-    padding: 5px;
+}
+
+#flags-modal{
+     display: none;
+    
+}
+
+.divider {
+    height: 1px;
+    background-color: $light-blue-50;
+    
+}
+
+.team-item{
+    background-color: $dark-main ;
+}
+
+.team-card{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 15px;
+    padding-inline: 10px;
+    gap: 10px;
+}
+.team-info{
+    display: flex;
+    min-width: min-content;
+    align-items: center;
+    gap: 10px;
+}
+.team-card-controls{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-add-form, .edit-team-name-container {
+    
+    input[type="text"] {
+        font-size: 16px;
+    }
 }
