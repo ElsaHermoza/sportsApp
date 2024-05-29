@@ -30,7 +30,7 @@ export function teamListManager() {
     function addTeam(teamId, teamNameValue) {
         // Create the team Object
         // Save the team object to localStorage
-        // TODO maybe put the team on html
+        // maybe put the team on html
 
         const newTeam = {
             id: teamId,
@@ -59,5 +59,7 @@ export function teamListManager() {
         addTeam(teamId, teamNameValue)
         teamNameInput.value = ''
     })
+
+    teams.forEach(team => createTeamItem(team.id, team.name))
 
 }

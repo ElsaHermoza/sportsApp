@@ -62,6 +62,5 @@ export function createTeamItem(teamId, teamNameValue) {
 </div>
 `
 
-    //TODO Maybe
     teamsListContainer.innerHTML += newTeamCard
 }
