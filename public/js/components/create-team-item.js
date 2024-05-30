@@ -8,7 +8,7 @@ export function createTeamItem(teamId, teamNameValue) {
 <div class="team-item" id="${teamId}">
     <div class="team-card">
         <div class="team-info">
-            <img src="../public/assets/flags/flag-placeholder.jpg" alt="">
+            <img class="team-flag" src="../public/assets/flags/flag-placeholder.jpg" alt="">
             <p class="team-name">${teamNameValue}</p>
         </div>
         <div class="team-card-controls">
