@@ -1,4 +1,4 @@
-.flags-modal {
+.modal {
     background-color: rgba(59, 59, 59, 0.705);
     position: fixed;
     top: 0;
@@ -17,7 +17,7 @@
         opacity: 1;
     }
 
-    .flags-modal modal {
+    .flags-modal {
         width: 100%;
         max-width: 320px;
         position: relative;
