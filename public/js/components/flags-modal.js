@@ -21,7 +21,7 @@ export function closeFlagsModal() {
    closeFlagsModalButton.addEventListener('click', function() {
        if (flagsModal.classList.contains('modal--open')) {
             flagsModal.classList.remove('modal--open');
-            console.log('hola')
+            
         };
         
      });
