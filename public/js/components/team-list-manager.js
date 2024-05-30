@@ -66,17 +66,42 @@ export function teamListManager() {
 
     teams.forEach(team => createTeamItem(team.id, team.name))
     
-   const deleteButtons = document.querySelectorAll('#delete');
-      deleteButtons.forEach(deleteButton => {
-    // Agrega un event listener al boton delete
-    deleteButton.addEventListener('click', function() {
+    const deleteButtons = document.querySelectorAll('.delete-team');
+    deleteButtons.forEach(deleteButton => {
+        // Agrega un event listener al boton delete
+        deleteButton.addEventListener('click', function() {
         //event listener es una indicacion que se le da al navegador para cuando haga clic delete y borra
         //llame al teamcard 
         const teamCard = this.closest('.team-card');
+
+        console.log('team card is ', teamCard)
+        // recibir teamId
+        const teamItem = teamCard.parentElement
+        const teamId = teamItem.id
+        console.log('ID es',teamId)
         // Elimina el elemento team-card
-        teamCard.remove();
+        teamItem.remove();
+
+        // llamamos funcion de remover del localStorage
+        removeTeamFromLocalStorage(teamId)
+        });
+    
     });
- });
+
+    function removeTeamFromLocalStorage(teamId) {
+       
+
+        let teams = getTeams()
+        console.log('equipos', teams)
+        // miramos a localStorage para tener el ID correcto
+        //const index = teams.findIndex(team => team.id === teamId)
+        //console.log('equipo a borrar', index);
+
+        teams = teams.filter(team => team.id !== teamId);
+        console.log('nuevas equipos', teams)
+        localStorage.setItem(teamListKey, JSON.stringify(teams));
+    }
+   
 
 
     function addcounter(){
@@ -85,6 +110,7 @@ export function teamListManager() {
 
     }
     addcounter()
+
    
 
 }
