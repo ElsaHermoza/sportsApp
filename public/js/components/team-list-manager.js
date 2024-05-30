@@ -6,6 +6,7 @@ import { createTeamItem } from "./create-team-item.js"
 export function teamListManager() {
 
     const teamAddForm = document.getElementById('team-add-form')
+    const counter= document.getElementById('teams-counter')
 
 
     /**
@@ -26,6 +27,7 @@ export function teamListManager() {
 
     // teams variable receives the information from the getTeams Return
     let teams = getTeams()
+   
 
     function addTeam(teamId, teamNameValue) {
         // Create the team Object
@@ -43,7 +45,9 @@ export function teamListManager() {
         localStorage.setItem(teamListKey, JSON.stringify(teams))
 
         createTeamItem(teamId, teamNameValue)
+        addcounter()
     }
+  
 
     // Get the form and input value
     teamAddForm.addEventListener('submit', (event) => {
@@ -74,5 +78,13 @@ export function teamListManager() {
     });
  });
 
+
+    function addcounter(){
+        let numbTeam = teams.length
+        counter.textContent = `${numbTeam} /16 `
+
+    }
+    addcounter()
+   
 
 }
