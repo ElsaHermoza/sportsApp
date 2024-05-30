@@ -61,5 +61,18 @@ export function teamListManager() {
     })
 
     teams.forEach(team => createTeamItem(team.id, team.name))
+    
+   const deleteButtons = document.querySelectorAll('#delete');
+      deleteButtons.forEach(deleteButton => {
+    // Agrega un event listener al boton delete
+    deleteButton.addEventListener('click', function() {
+        //event listener es una indicacion que se le da al navegador para cuando haga clic delete y borra
+        //llame al teamcard 
+        const teamCard = this.closest('.team-card');
+        // Elimina el elemento team-card
+        teamCard.remove();
+    });
+ });
+
 
 }
