@@ -1,3 +1,11 @@
+   export function createFlagsModal(){
+    const flagsModalcontainer =  document.getElementById('flags-modal')
+
+}
+
+
+
+
 export function showFlagsModal() {
 
     // cambiar getElementById for querySelectorAll
@@ -69,3 +77,4 @@ flagImages.forEach(image => {
         flagsModal.classList.remove('active');
     });
 });
+
