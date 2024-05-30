@@ -1,6 +1,14 @@
 export function showFlagsModal() {
 
+    // cambiar getElementById for querySelectorAll
+    // use forEach like we are doing on flagImages.forEach
     const openFlagsModalButton = document.getElementById('img-open-flags-modal');
+
+    // before flagsModal, use Pablo technique to create the modal
+    /**
+     * Code to create Modal
+     */
+    // replace  getElementById with querySelector
     const flagsModal = document.getElementById('flags-modal');
 
 
@@ -14,6 +22,10 @@ export function showFlagsModal() {
     
 };
 
+// Use Filipe code technique to delete the modal when click close-flags-modal
+/**
+ * code to delete modal
+ */
 export function closeFlagsModal() {
     const closeFlagsModalButton = document.getElementById('close-flags-modal');
     const flagsModal = document.getElementById('flags-modal');
@@ -25,6 +37,7 @@ export function closeFlagsModal() {
         };
         
      });
+
  };
 
  //const flagsArrayModal = [ '/public/assets/flags/flag01.jpg', '/public/assets/flags/flag02.jpg', '/public/assets/flags/flag03.jpg', '/public/assets/flags/flag04.jpg', 
