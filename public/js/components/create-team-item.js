@@ -56,7 +56,7 @@ export function createTeamItem(teamId, teamNameValue) {
     <!-- start of Edit name input and Save button box -->
     <form class="edit-team-name-container" id="edit-team-name-container">
         <input type="text" name="edit-team-name-input" id="edit-team-name-input" required>
-        <input type="submit" value="Save">
+        <input type="submit" value="Save" id="save-button>
     </form>
     <!-- end of Edit name input and Save button box -->
 </div>
