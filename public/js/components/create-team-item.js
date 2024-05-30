@@ -1,5 +1,5 @@
 
-export function createTeamItem(teamId, teamNameValue) {
+export function createTeamItem(teamId, teamNameValue, removeTeamFromLocalStorage) {
 
     const teamsListContainer = document.getElementById('teams-list-container');
 
@@ -32,4 +32,9 @@ export function createTeamItem(teamId, teamNameValue) {
 `
 
     teamsListContainer.appendChild(newTeamCard)
+
+    newTeamCard.querySelector('.delete-team').addEventListener('click', () => {
+    removeTeamFromLocalStorage(teamId)
+    newTeamCard.remove()
+    })
 }
