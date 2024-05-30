@@ -3,9 +3,10 @@ export function createTeamItem(teamId, teamNameValue) {
 
     const teamsListContainer = document.getElementById('teams-list-container');
 
-    let newTeamCard = `
-<!-- The card below(abajo) be created by JS -->
-<div class="team-item" id="${teamId}">
+    let newTeamCard = document.createElement('div')
+    newTeamCard.classList.add('team-item')
+    newTeamCard.id = teamId
+    newTeamCard.innerHTML = `
     <div class="team-card">
         <div class="team-info">
             <img src="../public/assets/flags/flag-placeholder.jpg" alt="">
@@ -28,8 +29,7 @@ export function createTeamItem(teamId, teamNameValue) {
             <input type="submit" value="Save">
         </form>
     </div>
-</div>
 `
 
-    teamsListContainer.innerHTML += newTeamCard
+    teamsListContainer.appendChild(newTeamCard)
 }
