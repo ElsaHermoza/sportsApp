@@ -79,7 +79,7 @@ export function teamListManager() {
 
     function addcounter(){
         let numbTeam = teams.length
-        counter.textContent = `${numbTeam} /16 `
+        counter.textContent = `${numbTeam} / 16 `
 
     }
     
