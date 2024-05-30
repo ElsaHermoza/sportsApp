@@ -59,6 +59,10 @@ a, button {
     line-height: 130%; /* 46.8px */
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: $white-blue;
@@ -91,6 +95,11 @@ input[type="submit"] {
     border: none;
     border-radius: 10px;
     padding: 15px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $accent-hover;
+    }
 }
 
 // Mobile

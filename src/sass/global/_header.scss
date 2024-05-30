@@ -33,6 +33,10 @@ header {
             border: none;
         }
 
+        .signin:hover{
+            background-color: $accent-hover;
+        }
+
         .burger {
             display: flex;
             background-color: $dark-main;
