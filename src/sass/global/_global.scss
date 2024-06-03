@@ -68,7 +68,7 @@ a {
     color: $white-blue;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
     background-color: hsla(216, 11%, 91%, 0.05);
     color: $light-blue;
     padding: 15px;
