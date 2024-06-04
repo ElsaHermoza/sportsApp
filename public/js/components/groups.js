@@ -6,6 +6,7 @@ function getTeams() {
     return teams;
 }
 
+let groups = {}
 // Randomize teams and create groups
 function randomizeTeams() {
     let teams = getTeams();
@@ -21,10 +22,27 @@ function randomizeTeams() {
     }
 
     // Create 4 groups with 4 teams each
-    const groups = [[], [], [], []];
-    for (let i = 0; i < teams.length; i++) {
-        groups[i % 4].push(teams[i]);
+    const groupSize = 4
+    const numberOfTeams = teams.length
+    const numberOfGroups = Math.ceil(numberOfTeams / groupSize)
+
+    for (let i = 0; i < numberOfGroups; i++) {
+        const groupName = String.fromCharCode('A'.charCodeAt(0) + i)
+        groups[groupName] = []
     }
+
+    teams.forEach((team, index) => {
+        const groupName = String.fromCharCode('A'.charCodeAt(0) + (index % numberOfGroups))
+        groups[groupName].push({ id: team.id, name: team.name, points: 0 })
+    })
+    
+    // const groups = [[], [], [], []];
+    // for (let i = 0; i < teams.length; i++) {
+    //     groups[i % 4].push(teams[i]);
+    // }
+    
+    // Save groups to local storage
+    localStorage.setItem('groups', JSON.stringify(groups));
 
     // Render groups in html
     renderGroups(groups);
@@ -35,12 +53,21 @@ function renderGroups(groups) {
     const container = document.getElementById('groupsContainer');
     container.innerHTML = '';
 
-    groups.forEach((group, groupIndex) => {
+    // Retrieve groups from local storage if they exist
+    const savedGroups = JSON.parse(localStorage.getItem('groups'));
+
+    if (savedGroups) {
+        groups = savedGroups;
+    } else {
+        groups = {};
+    }
+
+    Object.keys(groups).forEach((groupName) => {
         const groupDiv = document.createElement('div');
         groupDiv.className = 'group';
-        groupDiv.innerHTML = `<h2>Group ${String.fromCharCode(65 + groupIndex)}</h2>`;
+        groupDiv.innerHTML = `<h2>Group ${groupName}</h2>`;
 
-        group.forEach(team => {
+        groups[groupName].forEach(team => {
             const teamDiv = document.createElement('div');
             teamDiv.id = team.id
             teamDiv.innerHTML = `
@@ -52,22 +79,11 @@ function renderGroups(groups) {
 
         container.appendChild(groupDiv);
     });
+    
 }
 
-// Save points to local storage
-function savePoints() {
-    const pointsInputs = document.querySelectorAll('.team-points');
-    const points = {};
-
-    pointsInputs.forEach(input => {
-        const team = input.getAttribute('data-team');
-        const pointsValue = parseInt(input.value);
-        points[team] = pointsValue;
-    });
-
-    localStorage.setItem('teamPoints', JSON.stringify(points));
-    alert('Points saved successfully!');
-}
+document.addEventListener('DOMContentLoaded', () => {
+    renderGroups(groups);
+});
 
 document.getElementById('randomizeTeams').addEventListener('click', randomizeTeams);
-document.getElementById('savePoints').addEventListener('click', savePoints);
