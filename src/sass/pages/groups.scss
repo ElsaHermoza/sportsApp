@@ -1,0 +1,48 @@
+.groups-page-container {
+    max-width: 950px;
+    margin-inline: auto;
+    gap: 20px;
+}
+
+.groupsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+    gap: 10px;
+    background-color: rgba(8, 27, 55, 1);
+    padding: 5px;
+ 
+
+    div{
+        display: flex ;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 320px;    
+    }
+
+    h2{
+        size: 18px;
+    }
+    input[type=number] {
+        padding: 10px;
+        text-align: center;
+        
+    }
+}
+
+@media (min-width: 870px) {
+    .groupsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .group {
+        padding: 15px;
+    }
+}
