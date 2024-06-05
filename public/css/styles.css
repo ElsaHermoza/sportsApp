@@ -353,6 +353,7 @@ and then you can move to style desktop
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 50px;
 }
 
 .team-item {
