@@ -1,6 +1,4 @@
 // Retrieve teams from local storage
-import { teamListManager } from "./team-list-manager.js";
-
 function getTeams() {
     const teams = JSON.parse(localStorage.getItem('teams')) || [];
     return teams;
@@ -34,7 +32,7 @@ function randomizeTeams() {
 
     teams.forEach((team, index) => {
         const groupName = String.fromCharCode('A'.charCodeAt(0) + (index % numberOfGroups));
-        groups[groupName].push({ id: team.id, name: team.name, points: 0 });
+        groups[groupName].push({ id: team.id, name: team.name });
     });
 
     // Save groups to local storage
@@ -44,7 +42,7 @@ function randomizeTeams() {
     renderGroups(groups);
 }
 
-// Render groups with point inputs
+// Render groups 
 function renderGroups(groups) {
     const container = document.getElementById('groupsContainer');
     container.innerHTML = '';
@@ -68,7 +66,7 @@ function renderGroups(groups) {
             teamDiv.id = team.id;
             teamDiv.innerHTML = `
                 <p>${team.name}</p>
-                <input type="number" name="score" min="0" max="3" value="${team.points}" class="team-points" data-team-id="${team.id}" data-group-name="${groupName}">
+                <input type="number" name="score" min="0" max="3" class="team-points" data-team-id="${team.id}" data-group-name="${groupName}" value="0">
             `;
             groupDiv.appendChild(teamDiv);
         });
