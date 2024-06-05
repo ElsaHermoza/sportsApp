@@ -6,6 +6,7 @@ import { createTeamItem } from "./create-team-item.js"
 export function teamListManager() {
 
     const teamAddForm = document.getElementById('team-add-form')
+    const counter= document.getElementById('teams-counter')
 
 
     /**
@@ -26,6 +27,7 @@ export function teamListManager() {
 
     // teams variable receives the information from the getTeams Return
     let teams = getTeams()
+   
 
     function addTeam(teamId, teamNameValue) {
         // Create the team Object
@@ -42,8 +44,10 @@ export function teamListManager() {
         teams.push(newTeam)
         localStorage.setItem(teamListKey, JSON.stringify(teams))
 
-        createTeamItem(teamId, teamNameValue)
+        createTeamItem(teamId, teamNameValue, removeTeamFromLocalStorage)
+        addcounter()
     }
+  
 
     // Get the form and input value
     teamAddForm.addEventListener('submit', (event) => {
@@ -60,7 +64,25 @@ export function teamListManager() {
         teamNameInput.value = ''
     })
 
-    teams.forEach(team => createTeamItem(team.id, team.name))
+    teams.forEach(team => createTeamItem(team.id, team.name, removeTeamFromLocalStorage), addcounter())
+    
+    
+    function removeTeamFromLocalStorage(teamId) {
+       
+        teams = teams.filter(team => team.id !== teamId);
+        // console.log('nuevas equipos', teams)
+        localStorage.setItem(teamListKey, JSON.stringify(teams));
+        addcounter()
+    }
+   
+
+
+    function addcounter(){
+        let numbTeam = teams.length
+        counter.textContent = `${numbTeam} / 16 `
+
+    }
+    
 
 }
 

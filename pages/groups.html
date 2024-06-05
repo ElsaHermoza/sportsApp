@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAFE</title>
-    <link rel="stylesheet" href="./public/css/styles.css"> 
+    <title>Groups</title>
+    <link rel="stylesheet" href="../public/css/styles.css"> 
 </head>
 <body>
     <header>
@@ -59,24 +59,16 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="flex-column gap-5">
-                        <p class="hero-content--description">Coming To Your Nearest System - Fall 2277</p>
-                        <h1>Galactic Football Cup!</h1>
-                        <p>All planets from our Solar System are invited to participate in this once-in-a-lifetime event!</p>
-                        <p>All sentient species with at least four limbs are allowed to take part!</p>
-                    </div>
-                    <div class="flex-column gap-5">
-                        <h2>Tickets Coming Soon!</h2>
-                        <p>Astro-Suits and Oxygen Supplies Not Included</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="pb-20">
+        <div class="groups-page-container flex-column">
+            <h1>Groups</h1>
+            <button id="randomizeTeams">Randomize Teams</button>
+            <div class="divider"></div>
+            <div id="groupsContainer" class="groupsContainer"></div>
+            <button id="savePoints">Save Points</button>
+        </div>
     </main>
+    
     <footer>
         <div class="container">
             <p>&copy; 2277 <span>Galactic Association Football Evolved</span> All Rights Reserved</p>
@@ -96,4 +88,5 @@
 </body>
 
 <script type="module" src="/public/js/app.js"></script>
+<script type="module" src="/public/js/components/groups.js"></script>
 </html>

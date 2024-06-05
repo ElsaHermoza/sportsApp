@@ -1,13 +1,3 @@
-const usersList=[
-    {
-        "username": "Elena",
-        "password": "12345" 
-    },
-    {
-        "username": "Pablo",
-        "password": "12345"
-    }
-];
 
 export function modalClearLoginForm() {
     const usernameInput = document.getElementById('username');
@@ -47,6 +37,16 @@ export function modalClearLoginForm() {
  }
  function userValidation(usernameInputValue, passwordInputValue){
     const loginErrorSpan = document.getElementById('form-error');
+
+    const usersKey = 'logins'
+    const usersList = [
+        {
+        "username": "admin",
+        "password": "12345"
+        }
+    ]
+
+    localStorage.setItem(usersKey, JSON.stringify(usersList));
 
     const validUser = usersList.some(user => user.username === usernameInputValue && user.password === passwordInputValue);
 

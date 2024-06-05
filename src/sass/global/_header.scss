@@ -27,9 +27,14 @@ header {
         .signin{
             background-color: $accent;
             color: $dark-main;
+            font-size: 15px;
             border-radius: 4px;
             padding: 10px 18px 10px 18px;
             border: none;
+        }
+
+        .signin:hover{
+            background-color: $accent-hover;
         }
 
         .burger {

@@ -1,26 +1,88 @@
-button {
-    background-color: transparent;
+.teams-page-container {
+    max-width: 950px;
+    margin-inline: auto;
 }
 
-.team-item {
-    border: 1px blue solid;
-    padding: 5px;
-}
-
-.team-card {
-    border: 1px green solid;
-    margin: 10px;
-    padding: 5px;
-}
-
-.flags-modal {
-    border: 1px yellow dashed;
-    margin: 10px;
-    padding: 5px;
+.team-add-container {
+    margin-top: 30px;
 }
 
 .edit-team-name-container {
+    display: none; // because we don't have it working yet
     border: 1px yellow dashed;
-    margin: 10px;
-    padding: 5px;
+
+    input[type="text"] {
+        font-size: 15px;
+    }
+}
+
+.divider {
+    height: 1px;
+    background-color: $light-blue-50;
+    margin-top: 10px;
+    
+}
+
+.teams-counter {
+    text-align: right;
+    font-size: 16px;
+}
+
+.teams-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 870px) {
+    .teams-list-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
+.team-item{
+    background-color: $dark-main ;
+}
+
+.team-card{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 15px;
+    padding-inline: 10px;
+    gap: 10px;
+}
+.team-info{
+    display: flex;
+    min-width: min-content;
+    align-items: center;
+    gap: 10px;
+
+        img {
+            border-radius: 4px;
+        }
+}
+.team-card-controls{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    button {
+        background-color: transparent;
+    }
+}
+
+.team-add-form {
+    display: flex;
+    gap: 10px;
+
+    input[type="text"] {
+        font-size: 15px;
+        width: 100%;
+    }
+}
+
+.edit-team-name {
+    display: none;
 }
