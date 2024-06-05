@@ -32,7 +32,7 @@ export function teamListManager() {
     function addTeam(teamId, teamNameValue) {
         // Create the team Object
         // Save the team object to localStorage
-        // maybe put the team on html
+        // put the team on html
 
         const newTeam = {
             id: teamId,
@@ -142,22 +142,20 @@ let teamCardTemplate = `
     //teamCard.className = 'card';
 
     // Agregar el nombre del equipo al span
-    teamCard.querySelector('.team-name').textContent = teamName;
+    // teamCard.querySelector('.team-name').textContent = teamName;
 
-    // Agregar funcionalidad al botón de editar
-    const editButton = teamCard.querySelector('#edit');
-    editButton.addEventListener('click', function() {
-        teamCard.querySelector('.editInputContainer').style.display = 'block';
-    });
+    function editTeamName() {
+        
+    
+        // Agregar funcionalidad al botón de guardar
+        const saveButton = teamCard.querySelector('#save-button');
+        saveButton.addEventListener('click', function() {
+            const newTeamName = teamCard.querySelector('.editInput').value;
+            teamCard.querySelector('.teamName').textContent = newTeamName;
+            teamCard.querySelector('.edit-team-name-container').style.display = 'none';
+        });
+    
+        // Agregar el teamCard al contenedor
+        container.appendChild(newTeamCard);
 
-    // Agregar funcionalidad al botón de guardar
-    const saveButton = teamCard.querySelector('#save-button');
-    saveButton.addEventListener('click', function() {
-        const newTeamName = teamCard.querySelector('.editInput').value;
-        teamCard.querySelector('.teamName').textContent = newTeamName;
-        teamCard.querySelector('.editInputContainer').style.display = 'none';
-    });
-
-    // Agregar el teamCard al contenedor
-    container.appendChild(newTeamCard);
-});
+    }
