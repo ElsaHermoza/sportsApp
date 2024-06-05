@@ -15,6 +15,8 @@ export function teamListManager() {
      * Save the information to localStorage
      * Add the information to HTML 
      */
+
+    // Define a key for storing team data in local storage
     const teamListKey = 'teams'
 
 
@@ -42,9 +44,14 @@ export function teamListManager() {
 
         // saving the newTeam object to the Array
         teams.push(newTeam)
+
+         // Save updated teams array to local storage
         localStorage.setItem(teamListKey, JSON.stringify(teams))
 
+        // Create a team item in the HTML
         createTeamItem(teamId, teamNameValue, removeTeamFromLocalStorage)
+
+        // Update the counter
         addcounter()
     }
   
@@ -58,12 +65,13 @@ export function teamListManager() {
         const teamNameValue = teamNameInput.value
         //console.log(teamName);
 
-        const teamId = Date.now()
+        const teamId = Date.now() // Generate a unique ID for the team
 
         addTeam(teamId, teamNameValue)
-        teamNameInput.value = ''
+        teamNameInput.value = '' // Clear the input field after submission
     })
 
+    // Create team items for each team in the teams array
     teams.forEach(team => createTeamItem(team.id, team.name, removeTeamFromLocalStorage), addcounter())
     
     
@@ -72,7 +80,7 @@ export function teamListManager() {
         teams = teams.filter(team => team.id !== teamId);
         // console.log('nuevas equipos', teams)
         localStorage.setItem(teamListKey, JSON.stringify(teams));
-        addcounter()
+        addcounter() // Update the counter after removing a team
     }
    
 

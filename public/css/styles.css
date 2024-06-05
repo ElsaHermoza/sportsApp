@@ -145,7 +145,7 @@ a {
   color: hsl(197, 100%, 96%);
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
   background-color: hsla(216, 11%, 91%, 0.05);
   color: hsl(197, 100%, 92%);
   padding: 15px;
@@ -163,7 +163,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
   font-size: 15px;
 }
 
-input[type=submit] {
+input[type=submit], button {
   font-size: 16px;
   font-weight: 500;
   line-height: 130%;
@@ -173,7 +173,7 @@ input[type=submit] {
   border-radius: 10px;
   padding: 15px;
 }
-input[type=submit]:hover {
+input[type=submit]:hover, button:hover {
   cursor: pointer;
   background-color: hsl(197, 93%, 69%);
 }
@@ -338,14 +338,6 @@ and then you can move to style desktop
   margin-top: 30px;
 }
 
-.edit-team-name-container {
-  display: none;
-  border: 1px yellow dashed;
-}
-.edit-team-name-container input[type=text] {
-  font-size: 15px;
-}
-
 .divider {
   height: 1px;
   background-color: hsla(197, 100%, 92%, 0.5);
@@ -363,15 +355,11 @@ and then you can move to style desktop
   gap: 10px;
 }
 
-@media (min-width: 870px) {
-  .teams-list-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-}
 .team-item {
   background-color: hsl(216, 75%, 12%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
 }
 
 .team-card {
@@ -410,10 +398,71 @@ and then you can move to style desktop
   width: 100%;
 }
 
-.edit-team-name {
-  display: none;
+.edit-team-name-container {
+  gap: 20px;
+  padding: 0 10px 15px 10px;
+}
+.edit-team-name-container .editInput {
+  width: 100%;
 }
 
+@media (min-width: 870px) {
+  .teams-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .team-item {
+    align-self: baseline;
+  }
+}
+.pb-20 {
+  padding-block: 20px;
+}
+
+.groups-page-container {
+  max-width: 950px;
+  margin-inline: auto;
+  gap: 20px;
+}
+
+.groupsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  font-size: 19px;
+  gap: 10px;
+  background-color: rgb(8, 27, 55);
+  padding: 5px;
+}
+.group div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 320px;
+}
+.group h2 {
+  size: 18px;
+}
+.group input[type=number] {
+  padding: 10px;
+  text-align: center;
+}
+
+@media (min-width: 870px) {
+  .groupsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .group {
+    padding: 15px;
+  }
+}
 .menu {
   position: absolute;
   top: 100%;
