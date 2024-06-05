@@ -7,14 +7,6 @@
     margin-top: 30px;
 }
 
-.edit-team-name-container {
-    display: none; // because we don't have it working yet
-    border: 1px yellow dashed;
-
-    input[type="text"] {
-        font-size: 15px;
-    }
-}
 
 .divider {
     height: 1px;
@@ -34,16 +26,12 @@
     gap: 10px;
 }
 
-@media (min-width: 870px) {
-    .teams-list-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-}
 
 .team-item{
     background-color: $dark-main ;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
 }
 
 .team-card{
@@ -58,10 +46,10 @@
     min-width: min-content;
     align-items: center;
     gap: 10px;
-
-        img {
-            border-radius: 4px;
-        }
+    
+    img {
+        border-radius: 4px;
+    }
 }
 .team-card-controls{
     display: flex;
@@ -76,13 +64,30 @@
 .team-add-form {
     display: flex;
     gap: 10px;
-
+    
     input[type="text"] {
         font-size: 15px;
         width: 100%;
     }
 }
 
-.edit-team-name {
-    display: none;
+.edit-team-name-container {
+    gap: 20px;
+    padding: 0 10px 15px 10px;
+    
+        .editInput {
+        width: 100%;
+    }
+}
+
+@media (min-width: 870px) {
+    .teams-list-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .team-item {
+        align-self: baseline;
+    }
 }

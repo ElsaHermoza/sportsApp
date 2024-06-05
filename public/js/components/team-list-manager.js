@@ -32,7 +32,7 @@ export function teamListManager() {
     function addTeam(teamId, teamNameValue) {
         // Create the team Object
         // Save the team object to localStorage
-        // maybe put the team on html
+        // put the team on html
 
         const newTeam = {
             id: teamId,

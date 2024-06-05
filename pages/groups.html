@@ -59,9 +59,16 @@
             </div>
         </div>
     </header>
-    <main>
-        
+    <main class="pb-20">
+        <div class="groups-page-container flex-column">
+            <h1>Groups</h1>
+            <button id="randomizeTeams">Randomize Teams</button>
+            <div class="divider"></div>
+            <div id="groupsContainer" class="groupsContainer"></div>
+            <button id="savePoints">Save Points</button>
+        </div>
     </main>
+    
     <footer>
         <div class="container">
             <p>&copy; 2277 <span>Galactic Association Football Evolved</span> All Rights Reserved</p>
@@ -80,5 +87,6 @@
     </footer>
 </body>
 
-<script type="module" src="./public/js/app.js"></script>
+<script type="module" src="/public/js/app.js"></script>
+<script type="module" src="/public/js/components/groups.js"></script>
 </html>
