@@ -58,7 +58,7 @@ export function modalClearLoginForm() {
  }
 
  function redirectUser() {
-    window.location.href = "/pages/teams.html"/*here is the link on page3*/
+    window.location.href = "/pages/teams.html"
     
  }
  function clearLoginForm(usernameInput, passwordInput){

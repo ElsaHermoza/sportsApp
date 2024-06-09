@@ -33,13 +33,11 @@ export function createTeamItem(teamId, teamNameValue, removeTeamFromLocalStorage
 
     teamsListContainer.appendChild(newTeamCard)
 
-    // Delete team
     newTeamCard.querySelector('.delete-team').addEventListener('click', () => {
     removeTeamFromLocalStorage(teamId)
     newTeamCard.remove()
     })
 
-    // Agregar funcionalidad al botón de editar
     const editButton = newTeamCard.querySelector('.edit-team-name');
     const editForm = newTeamCard.querySelector('.edit-team-name-container');
     const editInput = newTeamCard.querySelector('.editInput');
@@ -47,25 +45,21 @@ export function createTeamItem(teamId, teamNameValue, removeTeamFromLocalStorage
 
     editButton.addEventListener('click', function() {
         editForm.style.display = 'flex';
-        editInput.value = teamNameElement.textContent // load name in input
+        editInput.value = teamNameElement.textContent 
     });
 
     editForm.addEventListener('submit', (event) => {
         event.preventDefault()
 
         const newTeamName = editInput.value.trim() 
-        // trim() method used to remove whitespace from both ends of a string, 
-        // eg: '   123   ' -> '123'
         
         if (newTeamName) {
             teamNameElement.textContent = newTeamName
 
             let teams = JSON.parse(localStorage.getItem('teams')) || [];
             teams = teams.map(team => {
-            // teams.map creates a new array
                 if (team.id === teamId) {
                     return { ...team, name: newTeamName }
-                    // ... is spread operator that is creating a copy of an object with updated or additional properties (in our case we are updating just team.name)
                 }
                 return team
             });
@@ -76,18 +70,3 @@ export function createTeamItem(teamId, teamNameValue, removeTeamFromLocalStorage
     })
 
 }
-
-/** line 63 - Why Using map to Create a New Array
- * 
- * Updating Data: When we want to update just one piece of data in an array (in this case, the team's name), it's easier to make a new array with the updated data rather than changing the original array directly.
- * Immutability: In JavaScript, it's generally a good practice to avoid directly modifying the original data (the teams array in this case). Creating a new array allows us to maintain the original data intact while making changes.
- */
-
-/** JSON.parse and JSON.stringify
- * line 62 - JSON.parse(localStorage.getItem('teams'))
- * localStorage only stores and understands strings, not arrays or objects
- * we use JSON.parse() to convert data into a JavaScript array, so we can work with it as a regular array
- * 
- * line 71 - localStorage.setItem('teams', JSON.stringify(teams));
- * we convert our updated array back into a JSON string
- */
